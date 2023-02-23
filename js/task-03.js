@@ -15,24 +15,8 @@ const images = [
 
 const galleryRef = document.querySelector(".gallery");
 
-const imagesEl = images.map(
-  (image) =>
-    `<li><img src="${image.url}" alt="${image.alt}" class="image"></li>`
-);
+const imagesRef = images
+  .map((image) => `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+  .join("");
 
-const gallery = imagesEl.join("");
-
-galleryRef.insertAdjacentHTML("beforeend", gallery);
-
-// images.forEach((image) => {
-//   const itemEl = document.createElement("li");
-//   itemEl.classList.add("item");
-
-//   const imageEl = document.createElement("img");
-//   imageEl.classList.add("img");
-//   imageEl.src = image.url;
-//   imageEl.alt = image.alt;
-
-//   itemEl.append(imageEl);
-//   galleryRef.append(itemEl);
-// });
+galleryRef.insertAdjacentHTML("beforeend", imagesRef);
